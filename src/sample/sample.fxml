@@ -48,6 +48,7 @@
                 <Insets top="10" bottom="5" left="5" right="5"/>
 
             </padding>
+            <!---->
 
             <Label text="Course name:" />
             <TextField text="" fx:id="courseNameF"/>
