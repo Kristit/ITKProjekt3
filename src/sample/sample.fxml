@@ -10,6 +10,10 @@
 
 
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.TableCell?>
 <BorderPane fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml"
             style="-fx-border-color:red; -fx-border-with:3; -fx-border-style: dashed">
@@ -23,27 +27,47 @@
     <top>
         <Label text="Please sumbit your course detailed information" alignment="CENTER"
                BorderPane.alignment="CENTER" textFill="darkblue"
-               style="-fx-border-color:blue; -fx-border-style:dashed"  />
+               style="-fx-border-color:blue; -fx-border-style:dashed">
+
+            <font>
+                <Font name="Ariel" size="16"/>
+            </font>
+        </Label>
+
 
     </top>
 
     <center>
-        <HBox fx:id="courseBox" spacing="10" alignment="CENTER" >
+        <VBox alignment="BASELINE_CENTER">
+        <HBox fx:id="courseBox"  alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" spacing="2"
+              style="-fx-border-color:blue; -fx-border-style:dashed">
 
             <padding>
 
-                <Insets top="5" bottom="5" left="5" right="5"/>
+                <Insets top="10" bottom="5" left="5" right="5"/>
 
             </padding>
 
+            <Text text="Add your course name:"/>
+            <TextField text=""/>
+            <Text text="Add your credits:"/>
+            <TextField text=""/>
+            <Button  fx:id ="addCourseButton"  >
+               <!-- <graphic>
+                    <ImageView>
+                        <Image url="@/toolbarButtonGraphics/general/Add16.gif"/>
+                    </ImageView>
+                </graphic> -->
+        </Button>
 
-            <Button text="Save" prefWidth="90"/>
 
-                </HBox>
+        </HBox>
+            <Button fx:id ="saveCourseButton" text= "Save" />
+
+        </VBox>
+
 
     </center>
-
-
 
 
 </BorderPane>
