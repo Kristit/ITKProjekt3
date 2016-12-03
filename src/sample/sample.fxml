@@ -36,54 +36,23 @@
             </font>
         </Label>
 
-
     </top>
 
     <center>
         <VBox alignment="BASELINE_CENTER">
-        <HBox fx:id="courseLine"  alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" spacing="2">
 
-            <padding>
+            <VBox fx:id="coursesList"/>
 
-                <Insets top="10" bottom="5" left="5" right="5"/>
-
-            </padding>
-            <!---->
-
-            <Label text="Course name:" />
-            <TextField text="" fx:id="courseNameF"/>
-            <Label text="Credits:" />
-            <TextField text="" fx:id="creditsF"/>
-            <Button  fx:id ="removeCourseButton"  >
-                <graphic>
-                    <ImageView>
-                        <Image url="@/toolbarButtonGraphics/general/Remove24.gif"/>
-                    </ImageView>
-                </graphic>
-            </Button>
-
-            <Button  fx:id ="addCourseButton"  >
-                <graphic>
-                    <ImageView>
-                        <Image url="@/toolbarButtonGraphics/general/Add24.gif"/>
-                    </ImageView>
-                </graphic>
-            </Button>
+            <Button fx:id="addCourseButton" text="Add new course" onAction="#addCourse"/>
 
 
-        </HBox>
-
-
-            <Button fx:id ="saveCourseButton"  text="Save your course"  onAction="#onButtonCliker"/>
-
-
-
-            <Label text="Please add your tasks and how many hours you would like to delicate each task" alignment="CENTER"
+            <Label text="Please add your tasks and how many hours you would like to delicate each task"
+                   alignment="CENTER"
                    BorderPane.alignment="CENTER" textFill="darkblue"
                    style="-fx-border-color:blue; -fx-border-style:dashed">
 
                 <padding>
-                    <Insets top="5" bottom="10" left="5" right="5"/>
+                    <Insets top="10" bottom="10" left="10" right="10"/>
 
                 </padding>
 
@@ -92,53 +61,12 @@
                 </font>
             </Label>
 
+            <VBox fx:id="taskList"/>
 
 
-            <HBox>
-                <padding>
-                    <Insets top="30"/>
-                </padding>
-                <Text text ="Task: "/>
-                <TextField text=""/>
-                <Text text=" Working hours:"/>
-                <TextField text=""/>
-                <Text text =" Deadline: "/>
-                <DatePicker/>
-                <Text text=" Course name:"/>
-                <ChoiceBox >
-                    <items>
-                        <FXCollections fx:factory="observableArrayList">
-                            <String fx:value= "CB1"/>
-                            <String fx:value="CB 2"/>
-                            <String fx:value="CB  3"/>
-                            <String fx:value="CB 4"/>
-                        </FXCollections>
-                    </items>
-
-                </ChoiceBox>
-
-                <Button  fx:id ="addTaskButton"  >
-                    <graphic>
-                        <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/Add16.gif"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-
-                <Button  fx:id ="removeTaskButton"  >
-                    <graphic>
-                        <ImageView>
-                            <Image url="@/toolbarButtonGraphics/general/Remove16.gif"/>
-                        </ImageView>
-                    </graphic>
-                </Button>
-
-            </HBox>
-
-            <Button fx:id ="saveCourseButton"  text="Save your tasks"/>
+            <Button fx:id="saveButton" text="Save" onAction="#saveTasks"/>
 
         </VBox>
-
 
 
     </center>
